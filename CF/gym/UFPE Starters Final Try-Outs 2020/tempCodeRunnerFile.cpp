@@ -1,2 +1,3 @@
-6 6 5
-vodka pitu beats whisky vodka cuba
+3 2 4
+9 7 7 9
+7 8 8 7

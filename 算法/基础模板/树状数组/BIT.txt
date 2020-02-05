@@ -1,0 +1,12 @@
+template<typename T, size_t size>
+struct BIT {
+	T a[size]; int n;
+	void init(int _n) { n = _n; memset(a, 0, sizeof(T)*(_n + 1)); }
+	void erase(int x) { for (int i = x; i <= n; i += i & -i)a[i] = 0; }
+	void update(int x, T y) {
+		//debug(x);
+		for (int i = x; i <= n; i += i & -i)a[i] += y;
+	}
+	T query(int x) { T re = 0;  for (int i = x; i; i -= i & -i)re += a[i]; return re; }
+};
+BIT<ll, MAXN>bit;//你数组所开最大的值
