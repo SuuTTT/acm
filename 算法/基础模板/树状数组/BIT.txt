@@ -9,4 +9,4 @@ struct BIT {
 	}
 	T query(int x) { T re = 0;  for (int i = x; i; i -= i & -i)re += a[i]; return re; }
 };
-BIT<ll, MAXN>bit;//你数组所开最大的值
+BIT<ll, MAXN>bit;//锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷值

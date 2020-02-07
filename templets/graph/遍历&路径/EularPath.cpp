@@ -1,24 +1,21 @@
-#include <bits/stdc++.h>
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<cstring>
 using namespace std;
 #define rep(i,j,k) for(int i = (int)j;i <= (int)k;i ++)
 #define debug(x) cerr<<#x<<":"<<x<<endl
 const int maxn=(int)1995;
 const int maxm=(int)1e6;
+//有向无向皆可
 /* 
-分析：题意等价于给n条边，找一个有n+1节点的链,多届取字典序最小。
-单一解只要从入度为0的点遍历即可。
-这里多解当且仅当形成一个环，一共2500个点，可以直接排序得到。
-wa1：fix了aa的样例，不知道哪里错了。v2:fix错了
-wa2: rho 型的路径，
+POJ1041
+先判定：无向图：所有点度数为偶数，有向图：所有点出入度相同。
+然后利用性质：欧拉回路G中去掉一个圈，得到的G'任然是欧拉回路。
 
-代码：有的循环必须要dfs，而且码量一样的。
-
-正解是欧拉回路&路版题
+欧拉路径和欧拉回路的算法类似，不同在于有解判定和初始点选择，
+且去圈最后会剩下一条路径
  */
-
-
-string s;
-
 int father[maxn];
 vector< pair<int,int> > adj[maxn];
 bool vis[maxm];
@@ -29,7 +26,7 @@ void add(int x,int y,int z){
     adj[x].push_back({z,y});
     adj[y].push_back({z,x});
 }
-vector<int > path,node;
+vector<int > path;
 #define eid first
 #define vtx second
 void dfs(int u){
@@ -38,7 +35,6 @@ void dfs(int u){
         vis[v.eid]=1;
         dfs(v.vtx);
         path.push_back(v.eid);
-        node.push_back(v.vtx);
     }
 }
 #undef eid
@@ -68,45 +64,21 @@ bool solve(){
     reverse(path.begin(),path.end());
     return 1;
 }
-string input[maxm];
 int main(){
-    int n;
-    cin>>n;
-    rep(i,1,n){
-        string s;
-        cin>>input[i];
-        s=input[i];
-        int x=s[0],y=s[1];
-        add(x,y,i);
-        //if(x==y)f[x]=1;
-        //st.insert(x);st.insert(y);
-    }
-    if(solve()){
-        string ans;
-        
-        for(auto t:node){
-            ans+=t;
-            
+    ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+    int x,y,z;
+    while(cin>>x>>y){
+        if(x==0&&y==0)break;
+        rep(i,1,maxn-1)adj[i].clear();
+        cin>>z;
+        add(x,y,z);
+        while(cin>>x>>y){
+             if(x==0&&y==0)break;
+            cin>>z;
+            add(x,y,z);
         }
-        ans+=ans[0];
-        cout<<ans<<endl;
-    }else{
-        cout<<"No Solution"<<endl;
+        if(solve()){for(int i=0;i<path.size();i++)cout<<path[i]<<' ';cout<<endl;}
+        else cout<<"Round trip does not exist."<<endl;
     }
+
 }
-/*
-1
-zA
-
-4
-aa
-ab
-bc
-ca
-
-4
-aZ
-tZ
-Xt
-aX
- */
