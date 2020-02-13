@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "deque": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "ios": "cpp",
+        "ostream": "cpp",
+        "cmath": "cpp",
+        "utility": "cpp",
+        "xutility": "cpp",
+        "algorithm": "cpp",
+        "initializer_list": "cpp",
+        "limits": "cpp",
+        "queue": "cpp",
+        "iosfwd": "cpp"
+    }
+}
