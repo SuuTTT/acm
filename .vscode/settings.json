@@ -12,6 +12,7 @@
         "initializer_list": "cpp",
         "limits": "cpp",
         "queue": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "type_traits": "cpp"
     }
 }
