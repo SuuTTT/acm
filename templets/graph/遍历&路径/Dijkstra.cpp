@@ -2,7 +2,7 @@
 //
 
 // SJTU, O(n^2)
-//no negative wheight, sorce is node 1
+//no negative wheight, source is node 1
 const int INF=1000000009;
 const int MaxN=1000;
 int dis[MaxN],//shortest distance source to i
