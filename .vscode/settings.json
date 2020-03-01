@@ -13,6 +13,9 @@
         "limits": "cpp",
         "queue": "cpp",
         "iosfwd": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "istream": "cpp",
+        "xlocnum": "cpp",
+        "bitset": "cpp"
     }
 }
