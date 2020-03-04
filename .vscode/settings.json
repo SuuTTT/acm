@@ -16,6 +16,7 @@
         "type_traits": "cpp",
         "istream": "cpp",
         "xlocnum": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "stack": "cpp"
     }
 }
