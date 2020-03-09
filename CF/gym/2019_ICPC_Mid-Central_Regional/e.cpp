@@ -5,11 +5,4 @@ using namespace std;
 const int maxn=(int)1e6+5;
 int main(){
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
-    sort(hs,hs+hn);
-	hn=unique(hs,hs+hn)-hs;
 }
-
-/* 
-sort(b+1,b+n+1);
-m=unique(b+1,b+n+1)-b-1;
- */
