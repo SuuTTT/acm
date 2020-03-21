@@ -10,6 +10,11 @@ int main(){
 }
 
 /* 
-sort(b+1,b+n+1);
-m=unique(b+1,b+n+1)-b-1;
+int getID(int x) { return lower_bound(vp.begin(), vp.end(), x) - vp.begin() + 1; };//x=vp[id];
+rep(i, 1, N) scanf("%d", &A[i]), vp.pb(A[i]);
+sort(vp.begin(), vp.end()), vp.erase(unique(vp.begin(), vp.end()), vp.end());
+
+
+
+
  */
