@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<vector>
 using namespace std;
+const int maxn=1e6+5;
 struct DisJointSet{
     vector<int> father,rk;
     DisJointSet(int n):father(n),rk(n){
@@ -28,7 +29,7 @@ struct DisJointSet{
     }
     
 };
-int father[4005],rk[4005];
+int father[maxn],rk[maxn];
 void init(int n){
     for(int i=0;i<n;i++)father[i]=i;
 }
@@ -36,7 +37,11 @@ int find(int v){
     return father[v]=father[v]==v?
     v:find(father[v]);
 }
-
+void un(int x,int y){
+    x=find(x),y=find(y);
+    if(x==y)return;
+    father[x]=y;
+}
 void merge(int x,int y){
     int a=find(x),b=find(y);
     if(rk[a]<rk[b]){

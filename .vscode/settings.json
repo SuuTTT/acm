@@ -17,6 +17,13 @@
         "istream": "cpp",
         "xlocnum": "cpp",
         "bitset": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "tuple": "cpp",
+        "string": "cpp",
+        "list": "cpp",
+        "xhash": "cpp",
+        "xiosbase": "cpp",
+        "xtree": "cpp",
+        "xlocale": "cpp"
     }
 }

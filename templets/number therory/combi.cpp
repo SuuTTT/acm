@@ -16,6 +16,20 @@ ll mpow(ll x,ll y){
 }
 
 ll divi(ll x,ll y){return mul(x,mpow(y,mod-2));}
+
+ll fact[10000000]={1}, factc=0;
+ll Fact(ll x){
+  while( factc < x ){
+    factc++;
+    fact[factc]=mul( fact[factc-1] , factc );
+  }
+  return fact[x];
+}
+
+ll nCr(ll n,ll r){
+  if(n<r)return 0;
+  return divi( Fact(n) , mul( Fact(n-r) , Fact(r) )   );
+}
 /*
 ll ncr[5000][5000];
 
@@ -41,18 +55,7 @@ ll nCr(ll n,ll r){
 */
 
 
-ll fact[10000000]={1}, factc=0;
-ll Fact(ll x){
-  while( factc < x ){
-    factc++;
-    fact[factc]=mul( fact[factc-1] , factc );
-  }
-  return fact[x];
-}
 
-ll nCr(ll n,ll r){
-  return divi( Fact(n) , mul( Fact(n-r) , Fact(r) )   );
-}
 
 
 /*

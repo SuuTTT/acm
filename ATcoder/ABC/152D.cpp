@@ -9,11 +9,12 @@ int main(){
     int n;cin>>n;
     int ans=0;
     rep(i,1,n){
-        int ii=i;while(ii>10)ii/=10;
+        int ii=i;while(ii>9)ii/=10;
         
         int id=i%10+ii*10;
-        int inv=i%10*10+ii;
          /*
+        int inv=i%10*10+ii;
+        
         if(i==0||ii==10)continue;
         
         ans+=2*mp[inv];
@@ -21,7 +22,7 @@ int main(){
         if(ii==i%10)ans++; */
         mp[id]++; 
     }
-    rep(i,1,9)rep(j,1,9){
+    rep(i,0,9)rep(j,0,9){
         ans+=mp[i*10+j]*mp[j*10+i];
     }
     cout<<ans<<endl;
