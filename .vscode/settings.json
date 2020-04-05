@@ -24,6 +24,16 @@
         "xhash": "cpp",
         "xiosbase": "cpp",
         "xtree": "cpp",
-        "xlocale": "cpp"
+        "xlocale": "cpp",
+        "exception": "cpp",
+        "functional": "cpp",
+        "map": "cpp",
+        "memory": "cpp",
+        "set": "cpp",
+        "sstream": "cpp",
+        "streambuf": "cpp",
+        "unordered_map": "cpp",
+        "complex": "cpp",
+        "cstdlib": "cpp"
     }
 }

@@ -36,10 +36,10 @@ const int maxn=(int)1e5+5;
 vector<pii> E[maxn]; 
 void dijkstra_(){
     priority_queue<pii,vector<pii>, greater<pii> > Q;
-    Q.push()
+    Q.push({0,0});//源点
     while(!Q.empty()){
-        pii now=Q.front();Q.pop();
-        if(now.fi!=dis[now.se])continue;//小优化
+        pii now=Q.top();Q.pop();
+        //if(now.fi!=dis[now.se])continue;//小优化
         for(auto v:E[now.se]){
             if(dis[v.fi]>dis[now.se]+v.se){
                 dis[v.fi]=dis[now.se]+v.se;
@@ -50,4 +50,3 @@ void dijkstra_(){
     }
 
 }
-
