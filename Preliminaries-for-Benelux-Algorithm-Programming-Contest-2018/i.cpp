@@ -5,5 +5,25 @@ using namespace std;
 const int maxn=(int)1e6+5;
 
 int main(){
-    ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+    
 }
+
+/* 
+1234
+123
+
+123a
+123
+
+a123
+123
+
+c0deninja5
+c0deninja
+
+abc
+ABC
+
+pa55WORD
+PA55word
+ */

@@ -72,3 +72,53 @@ struct strongly_connected_components{
      } 
 };
 int main(){}
+/* 
+class Graph{
+public:
+    int n;
+    vector< vector<int> > to;
+    vector<int> dfn,low,stk,scc,num;
+    int sccnum,index;
+    void resize(int n_){
+        n=n_;
+        to.resize(n+1);
+    }
+    void add_edge(int u,int v){
+        to[u].emplace_back(v);
+    }
+    void tarjan(int root){
+        dfn[root]=low[root]=++index;
+        stk.emplace_back(root);
+        for(auto v:to[root]){
+            if(!dfn[v]){
+                tarjan(v);
+                low[root]=min(low[root],low[v]);
+            }else if(!scc[v]){
+                low[root]=min(low[root],low[v]);
+            }
+        }
+        if(low[root]==dfn[root]){
+            sccnum++;
+            while(1){
+                int x=stk.back();
+                scc[x]=sccnum;
+                stk.pop_back();
+                if(x==root)break;
+            }
+        }
+    }
+    void find_scc(){
+        dfn.resize(n+1);
+        low.resize(n+1);
+        scc.resize(n+1);
+        sccnum=index=0;
+        rep(i,1,n)if(!dfn[i])tarjan(i);
+    }
+    ll find_max_scc(){
+        num.resize(sccnum+1);
+        rep(i,1,n)num[scc[i]]++;
+        return *max_element(num.begin(),num.end());
+    }
+};
+
+ */

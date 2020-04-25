@@ -5,6 +5,10 @@ using namespace std;
 const int maxn=(int)1e6+5;
 int main(){
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+    getline(cin,s);
+    stringstream ss(s);
+    ss>>temp;
+    ss>>temp;
 }
 void _sprintf{
     char ans[32768][16];
