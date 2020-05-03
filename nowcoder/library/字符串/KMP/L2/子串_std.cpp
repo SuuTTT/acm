@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
- 
+ #define debug(x) cerr<<#x<<":"<<x<<endl
 const int M=5e6;
 char sd[20];
 char s[M],t[M];
@@ -19,6 +19,7 @@ void make_nt(char t[])
         else
             k=nt[k];
     }
+    i=0;while(t[i])debug(nt[i++]);
 }
  
 bool match(char s[],char t[])

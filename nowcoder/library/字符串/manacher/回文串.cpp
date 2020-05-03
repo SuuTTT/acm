@@ -1,3 +1,7 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define rep(i,j,k) for(int i = (int)(j);i <= (int)(k);i ++)
+#define debug(x) cerr<<#x<<":"<<x<<endl
 //输入的串是s，生成长为2l+3的str串，p数组对应str串的回文半径。
 /*
 
@@ -7,7 +11,7 @@ ajabbaaksj
 str:&#a#j#a#b#b#a#a#k#s#j#$
 p:  0010301014101210101010
 i->i*2+2
-i->(i-2)/2
+i->i-2/2
 */
 const int maxn=1000005;
 string s;
@@ -28,3 +32,21 @@ void manacher(string s)
        i+=k;j=max(j-k,0);
    }
 }
+int main(){
+    ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+    while(cin>>s){
+        
+        
+        manacher(s);
+        cout<<*max_element(p,p+2*s.length()+3)<<endl;
+        
+    }
+}
+
+/* 
+a
+aa
+aaa
+aqppqole
+ebcml
+ */

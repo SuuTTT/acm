@@ -57,3 +57,8 @@ int main() {
 	}
 	cout << ans << endl;
 }
+/* 
+
+4
+1 3 4 2
+ */
