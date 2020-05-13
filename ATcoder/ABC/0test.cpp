@@ -5,9 +5,15 @@ using i32 = int_fast32_t;
 using i64 = int_fast64_t;
  
 int main() {
-    i32 n, k;
+    
+    string s1,s2;char c;cin>>s1>>c;cout<<s1.find(c)<<s1.npos<<endl;
+    
+   // cout << ans << endl;
+}
+/* 
+i32 n, k;
     cin >> n >> k;
-    vector<i64> a(n+1);
+vector<i64> a(n+1);
     for (i32 i = 1; i < n+1; i++) cin >> a[i];
     partial_sum(begin(a), end(a), begin(a));
  
@@ -17,10 +23,4 @@ int main() {
         if (i >= k) count[(a[i-k] - (i-k)) % k]--;
         ans += count[(a[i] - i) % k]++;
     }
- 
-    cout << ans << endl;
-}
-/* 
-5 4
-1 4 2 3 5
  */

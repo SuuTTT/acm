@@ -17,6 +17,7 @@ int main(){
         ans=max(ans,p);
         tmp[p]=min(a[i],tmp[p]);
     }
+    rep(i,1,ans)debug(tmp[i]);
     cout<<ans<<endl;
 }
 /* 

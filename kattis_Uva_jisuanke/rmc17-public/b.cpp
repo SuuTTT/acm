@@ -3,8 +3,8 @@ using namespace std;
 #define rep(i,j,k) for(int i = (int)j;i <= (int)k;i ++)
 #define debug(x) cerr<<#x<<":"<<x<<endl
 const int maxn=(int)1e6+5;
-//S 不能为1
 typedef long long ll;
+
 void rd(int& n){cin>>n;}
 void print(ll n){cout<<n<<endl;}
 namespace Dinic {
@@ -15,6 +15,10 @@ namespace Dinic {
     inline void add(int x, int y, ll z, int o = 1) {
         e[++tot] = y, f[tot] = z, t[tot] = h[x], h[x] = tot;
         if (o) add(y, x, 0, 0);
+    }
+    void print(){
+        for(int x=0;x<=n;x++)
+        for (int i = h[x]; i; i = t[i]) cout<<x<<' '<<e[i]<<' '<<f[i]<<endl;
     }
     inline bool bfs() {
         for (int i = 1; i <= n; i++) d[i] = 0;
@@ -47,6 +51,7 @@ namespace Dinic {
         return nwf - rst;
     }
     inline void main() {
+        debug("main");
         while (bfs()) {
             for (int i = 1; i <= n; i++) hi[i] = h[i];
             ll now;
@@ -56,10 +61,30 @@ namespace Dinic {
 }
 
 int main() {
-    rd(Dinic::n), rd(Dinic::m), Dinic::S=1, Dinic::T=Dinic::n;
-    for (int i = 1, x, y, z; i <= Dinic::m; i++)
-        rd(x), rd(y), rd(z),x++,y++, Dinic::add(x, y, z);
+    rd(Dinic::n), Dinic::S=Dinic::n+2;Dinic::T=Dinic::n+1;
+    ll ans=0;
+    for (int i = 1, x, y, z; i <= Dinic::n; i++){
+        rd(x), rd(y), rd(z),x-=y;
+        if(x>=0)Dinic::add(Dinic::S, i, x),ans+=x;
+        else Dinic::add(i, Dinic::T, -x);
+        rep(j,1,z){
+            int v;rd(v);
+            Dinic::add(v, i, Dinic::inf);
+        }
+    }
+    Dinic::n+=2;
+   // Dinic::print();
     Dinic::main();
-    print(Dinic::mxf);
+    //debug(Dinic::mxf);
+    print(ans-Dinic::mxf);
     return 0;
 }
+/* 
+S！=1 && v->i
+5
+0 3 2 2 3
+1 3 2 4 5
+4 8 1 4
+5 3 0
+9 2 0
+ */
